@@ -45,7 +45,7 @@ def scrape_data():
 
 # execute and persist data
 async def main():
-    await scrape_data()
+    scrape_data()
     # persist data
     with open(os.path.abspath(path_to_data), 'w') as file:
         json.dump(data, file, indent=2)
