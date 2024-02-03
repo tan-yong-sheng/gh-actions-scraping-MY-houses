@@ -38,9 +38,9 @@ def scrape_data():
                                "limit":200},
                                         # Get Random User Agent String.
                         headers={"User-Agent": user_agent_rotator.get_random_user_agent()})
-
-    json_output = response.json()["data"]
-    data.append(json_output)
+    if response.status_code == 200:
+        json_output = response.json()["data"]
+        data.append(json_output)
 
 
 # execute and persist data
