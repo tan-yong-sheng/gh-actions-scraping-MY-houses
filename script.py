@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import datetime
+import json
 import pandas
 import requests
 from random_user_agent.user_agent import UserAgent
