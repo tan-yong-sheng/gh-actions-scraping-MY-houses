@@ -40,7 +40,7 @@ def scrape_data():
                         headers={"User-Agent": user_agent_rotator.get_random_user_agent()})
 
     json_output = response.json()["data"]
-    return data.append(json_output)
+    data.append(json_output)
 
 
 # execute and persist data
