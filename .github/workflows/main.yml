@@ -34,7 +34,7 @@ jobs:
     #  run: |
     #    pytest
     - name: Scrape
-      run: python script.py 
+      run: sudo python script.py 
 
     - uses: mikeal/publish-to-github-action@master
       env:
