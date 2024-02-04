@@ -45,12 +45,11 @@ def scrape_data():
                         headers={"User-Agent": user_agent_rotator.get_random_user_agent()})
 
     json_output = response.json()["data"]
-    data.append(json_output)
+    data.extend(json_output)
 
 
 # execute and persist data
-#async def main():
-def main():
+async def main():
     scrape_data()
     # persist data
     with open(path_to_data, 'w') as file:
@@ -58,6 +57,5 @@ def main():
 
 
 if __name__ == "__main__":
-    #import asyncio
-    #asyncio.run(main())
-    main()
+    import asyncio
+    asyncio.run(main())
