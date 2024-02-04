@@ -48,4 +48,4 @@ jobs:
       # [Expected output from your script]
     - uses: mikeal/publish-to-github-action@master
       env:
-        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # GitHub sets this for you
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub sets this for you
