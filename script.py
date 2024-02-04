@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+from stat import *
 import datetime
 import json
 import requests
@@ -14,6 +15,7 @@ warnings.filterwarnings("ignore")
 data_folder = '/data'
 now = datetime.datetime.utcnow()
 path_to_data = os.path.join(os.path.dirname(__file__), data_folder, f"{now:%Y-%m-%d}.json")
+
 
 # read data, if needed
 data = []
@@ -47,6 +49,7 @@ def scrape_data():
 async def main():
     scrape_data()
     # persist data
+    os.chmod(path_to_data, S_IWRITE) # make writable before writing
     with open(os.path.abspath(path_to_data), 'w') as file:
         json.dump(data, file, indent=2)
 
