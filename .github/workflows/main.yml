@@ -12,6 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    options: --user root
 
     # Assigning permissions to jobs  # https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
     # Modify the default permissions granted to GITHUB_TOKEN.
