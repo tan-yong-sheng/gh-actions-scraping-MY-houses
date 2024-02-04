@@ -1,9 +1,9 @@
 # Malaysia Housing data scraping
 Created by [Yong Sheng](https://tanyongsheng.net)
 
-Scraping housing data from [mudah.my](https://www.mudah.my/) on a daily basis
+Scraping housing data from [mudah.my](https://www.mudah.my/) on an hourly basis. Check [here](https://github.com/tan-yong-sheng/gh-actions-scraping-MY-houses/tree/main/data)!
 
-## Other similar websites:
+## Plans to get the data from other similar websites:
 ---------------------------
 1. [iBilik](https://ibilik.my)
 1. [propertyguru](https://iproperty.com.my)
