@@ -46,7 +46,7 @@ jobs:
         chmod +x script.py
 
         # Now you can run your script like this:
-        ./script.py
+        python3 ./script.py
 
       # Output:
       # [Expected output from your script]
