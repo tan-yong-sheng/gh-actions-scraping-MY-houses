@@ -12,7 +12,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    options: --user root
 
     # Assigning permissions to jobs  # https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
     # Modify the default permissions granted to GITHUB_TOKEN.
@@ -44,7 +43,8 @@ jobs:
         chmod +x script.py
         # Now you can run your script like this:
         python3 script.py
-
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Output:
       # [Expected output from your script]
     - uses: mikeal/publish-to-github-action@master
