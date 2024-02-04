@@ -34,8 +34,18 @@ jobs:
     #  run: |
     #    pytest
     - name: Scrape
-      run: python script.py 
+      run: |
+        # Add a shebang line to your script
+        echo '#!/usr/bin/env python3' > script.py
 
+        ## Change the script's permissions to allow execution
+        chmod +x script.py
+
+        # Now you can run your script like this:
+        ./script.py
+
+      # Output:
+      # [Expected output from your script]
     - uses: mikeal/publish-to-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }} # GitHub sets this for you
