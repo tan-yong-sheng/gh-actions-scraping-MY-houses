@@ -4,6 +4,7 @@ import os
 import pathlib
 from stat import *
 import datetime
+import pytz
 import json
 import requests
 from random_user_agent.user_agent import UserAgent
@@ -14,7 +15,7 @@ warnings.filterwarnings("ignore")
 
 # for you to change easily
 data_folder = 'data'
-now = datetime.datetime.utcnow()
+now = datetime.datetime.now(tz=pytz.timezone("Asia/Kuala_Lumpur"))
 p = pathlib.Path(os.path.dirname(__file__))
 path_to_data = p.joinpath(data_folder, f"{now:%Y-%m-%d}.json")
 print(os.path.dirname(__file__))

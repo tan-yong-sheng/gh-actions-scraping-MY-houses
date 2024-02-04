@@ -1,4 +1,5 @@
 requests
-random_user_agent
 pandas
+random_user_agent
+pytz
 nbclient
