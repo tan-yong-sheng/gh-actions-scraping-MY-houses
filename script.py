@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import pathlib
 from stat import *
 import datetime
 import json
@@ -12,10 +13,12 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # for you to change easily
-data_folder = '/data'
+data_folder = 'data'
 now = datetime.datetime.utcnow()
-path_to_data = os.path.join(os.path.dirname(__file__), data_folder, f"{now:%Y-%m-%d}.json")
-
+p = pathlib.Path(os.path.dirname(__file__))
+path_to_data = p.joinpath(data_folder, f"{now:%Y-%m-%d}.json")
+print(os.path.dirname(__file__))
+print(path_to_data)
 
 # read data, if needed
 data = []
@@ -46,14 +49,15 @@ def scrape_data():
 
 
 # execute and persist data
-async def main():
+#async def main():
+def main():
     scrape_data()
     # persist data
-    os.chmod(path_to_data, S_IWRITE) # make writable before writing
-    with open(os.path.abspath(path_to_data), 'w') as file:
+    with open(path_to_data, 'w') as file:
         json.dump(data, file, indent=2)
 
 
 if __name__ == "__main__":
-    import asyncio
-    asyncio.run(main())
+    #import asyncio
+    #asyncio.run(main())
+    main()
