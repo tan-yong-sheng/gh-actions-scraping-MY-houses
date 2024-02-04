@@ -1,2 +1,4 @@
 requests
 random_user_agent
+pandas
+nbclient
