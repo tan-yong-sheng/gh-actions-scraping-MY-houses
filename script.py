@@ -13,7 +13,7 @@ warnings.filterwarnings("ignore")
 # for you to change easily
 data_folder = '/data'
 now = datetime.datetime.utcnow()
-path_to_data = os.path.join(os.path.dirname(__file__), data_folder, f"{now:%Y-%m-%d}.json")
+path_to_data = os.path.join(data_folder, f"{now:%Y-%m-%d}.json")
 
 # read data, if needed
 data = []
