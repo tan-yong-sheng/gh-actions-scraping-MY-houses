@@ -35,7 +35,7 @@ jobs:
 
         - name: executing jupyter notebook & export html report
           run: |
-            export today_date=$(date +"%Y-%m-%d")
+            today_date=$(date +"%Y-%m-%d")
             jupyter execute housing_data.ipynb
             jupyter nbconvert --output-dir='./report' --output 'report_${today_date}' --to webpdf housing_data.ipynb 
 
