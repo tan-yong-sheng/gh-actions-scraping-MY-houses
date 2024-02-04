@@ -35,9 +35,8 @@ jobs:
 
         - name: executing jupyter notebook & export html report
           run: |
-            today_date=$(date +"%Y-%m-%d")
             jupyter execute housing_data.ipynb
-            jupyter nbconvert --output-dir='./report' --output 'report_${today_date}' --to webpdf housing_data.ipynb 
+            jupyter nbconvert --output-dir='./report' --output 'report_$(date +'%Y-%m-%dT%H:%M:%S')' --to webpdf housing_data.ipynb 
 
         - name: Commit the changes to this github repo
           uses: mikeal/publish-to-github-action@master
