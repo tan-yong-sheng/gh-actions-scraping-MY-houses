@@ -2,7 +2,6 @@
 import os
 import datetime
 import json
-import pandas
 import requests
 from random_user_agent.user_agent import UserAgent
 from random_user_agent.params import SoftwareName, OperatingSystem
