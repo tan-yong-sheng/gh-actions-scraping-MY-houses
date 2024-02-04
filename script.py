@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+# script.py
+
 import os
 import datetime
 import json
