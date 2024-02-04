@@ -39,14 +39,10 @@ jobs:
     #    pytest
     - name: Scrape
       run: |
-        # Add a shebang line to your script
-        echo '#!/usr/bin/env python3' > script.py
-
         ## Change the script's permissions to allow execution
         chmod +x script.py
-
         # Now you can run your script like this:
-        python3 ./script.py
+        python3 script.py
 
       # Output:
       # [Expected output from your script]
