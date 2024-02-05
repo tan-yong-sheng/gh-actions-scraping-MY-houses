@@ -6,10 +6,9 @@ name: Create PDF report from Jupyter Notebook
 on:
   schedule:
     - cron: "0 4 * * *"
-  push:
-    branches:
-      - main
-
+  #push:
+  #  branches:
+  #    - main
 
 jobs:
   build:
