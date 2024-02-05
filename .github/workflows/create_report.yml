@@ -32,6 +32,11 @@ jobs:
             pip install ipython ipykernel nbconvert nbclient playwright pyppeteer
             if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+        - name: fetch the changes made (by other script) & merge
+          run: |
+            git fetch && git merge
+            git commit -m "fetch changes"
+
         - name: executing jupyter notebook & export PDF report
           run: |
             git fetch && git merge # sycn between this repo and docker instance created by this script
