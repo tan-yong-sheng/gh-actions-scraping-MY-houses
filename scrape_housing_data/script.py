@@ -14,13 +14,14 @@ import requests
 from random_user_agent.user_agent import UserAgent
 from random_user_agent.params import SoftwareName, OperatingSystem
 import warnings
+import asyncio
 
 warnings.filterwarnings("ignore")
 
 # for you to change easily
 data_folder = 'data'
 now = datetime.datetime.now(tz=pytz.timezone("Asia/Kuala_Lumpur"))
-p = pathlib.Path(os.path.dirname(__file__))
+p = pathlib.Path(os.path.dirname(os.path.dirname(__file__)))
 path_to_data = p.joinpath(data_folder, f"{now:%Y-%m-%d}.json")
 print(os.path.dirname(__file__))
 print(path_to_data)
@@ -41,7 +42,7 @@ user_agent_rotator = UserAgent(software_names=software_names, operating_systems=
 
 
 # scrape housing data from mudah.my
-def scrape_data():
+def get_data_from_mudah():
     """
     Scrape mudah.my website for property listing, either sell or let
     """
@@ -51,7 +52,16 @@ def scrape_data():
                                "limit":200},
                                         # Get Random User Agent String.
                         headers={"User-Agent": user_agent_rotator.get_random_user_agent()})
+    return response
 
+
+def scrape_data(response):
+    """_summary_
+
+    Parameters
+    ----------
+    response : 
+    """
     json_output = response.json()["data"]
     data.extend(json_output)
 
@@ -59,16 +69,18 @@ def scrape_data():
 # execute and persist data
 async def main():
     """
-    Main function to execute the workflows of this project. It executes the following:
+    Asynchronous function to execute the workflows of this project. It executes the following:
     1. Using `scrape_data` function to scrape data for property listing
     2. Save the scraped json data into a list
     """
-    scrape_data()
+    mudah_housing_data = get_data_from_mudah()
+    
+    scrape_data(mudah_housing_data) 
+    
     # persist data
     with open(path_to_data, 'w') as file:
         json.dump(data, file, indent=2)
 
 
 if __name__ == "__main__":
-    import asyncio
     asyncio.run(main())
