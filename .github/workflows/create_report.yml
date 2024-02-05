@@ -40,8 +40,6 @@ jobs:
             jupyter execute housing_data.ipynb
             jupyter nbconvert --output-dir='./report' --output report_$converted_date --to webpdf --allow-chromium-download housing_data.ipynb 
 
-        - uses: actions/checkout@v3
-
         - name: Commit the changes to this github repo
           uses: mikeal/publish-to-github-action@master
           env:
