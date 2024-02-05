@@ -6,9 +6,6 @@
 Welcome to gh-actions-scraping-MY-houses's documentation!
 =========================================================
 
-.. automodule:: src/script
-    :members:
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
