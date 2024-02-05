@@ -33,7 +33,7 @@ jobs:
             pip install ipython ipykernel nbconvert nbclient playwright pyppeteer
             if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-        - name: executing jupyter notebook & export html report
+        - name: executing jupyter notebook & export PDF report
           run: |
             current_date=$(date +'%Y-%m-%d')
             converted_date=$(TZ=Asia/Shanghai date -d "$current_date" +'%y-%m-%dt%H:%M:%S')
