@@ -6,7 +6,7 @@
 Welcome to gh-actions-scraping-MY-houses's documentation!
 =========================================================
 
-.. automodule:: script
+.. automodule:: src/script
     :members:
 
 .. toctree::
