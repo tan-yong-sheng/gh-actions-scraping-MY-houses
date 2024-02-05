@@ -6,9 +6,9 @@ name: Create PDF report from Jupyter Notebook
 on:
   schedule:
     - cron: "0 4 * * *"
-  #push:
-  #  branches:
-  #    - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:  
 
 jobs:
   build:
