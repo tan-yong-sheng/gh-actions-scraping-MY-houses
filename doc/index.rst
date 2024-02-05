@@ -3,8 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to gh-actions-scraping-MY-houses's documentation!
+Welcome to scrape_housing_data's documentation!
 =========================================================
+
+.. automodule:: scrape_housing_data.script
+    :members:
 
 .. toctree::
    :maxdepth: 2

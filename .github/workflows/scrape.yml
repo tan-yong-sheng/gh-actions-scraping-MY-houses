@@ -46,9 +46,9 @@ jobs:
       - name: Scrape
         run: |
           ## Change the script's permissions to allow execution
-          chmod +x src/script.py
+          chmod +x scrape_housing_data/script.py
           # Now you can run your script like this:
-          python3 src/script.py
+          python3 scrape_housing_data/script.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # Output:
