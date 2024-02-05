@@ -34,6 +34,7 @@ jobs:
 
         - name: executing jupyter notebook & export PDF report
           run: |
+            git fetch && git merge # sycn between this repo and docker instance created by this script
             current_datetime=$(date +'%Y-%m-%dt%H:%M:%S')
             converted_date=$(TZ=Asia/Kuala_Lumpur date -d "$current_datetime" +'%Y-%m-%d')
             jupyter execute housing_data.ipynb
