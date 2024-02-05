@@ -30,7 +30,7 @@ jobs:
         - name: Install dependencies
           run: |
             python -m pip install --upgrade pip
-            pip install ipython ipykernel nbconvert nbclient
+            pip install ipython ipykernel nbconvert nbclient playwright pyppeteer
             if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
         - name: executing jupyter notebook & export html report
@@ -38,7 +38,7 @@ jobs:
             current_date=$(date +'%Y-%m-%d')
             converted_date=$(TZ=Asia/Shanghai date -d "$current_date" +'%y-%m-%dt%H:%M:%S')
             jupyter execute housing_data.ipynb
-            jupyter nbconvert --output-dir='./report' --output report_$converted_date --to html housing_data.ipynb 
+            jupyter nbconvert --output-dir='./report' --output report_$converted_date --to webpdf housing_data.ipynb 
 
         - name: Commit the changes to this github repo
           uses: mikeal/publish-to-github-action@master
