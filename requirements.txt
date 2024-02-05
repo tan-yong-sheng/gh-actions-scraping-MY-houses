@@ -1,5 +1,4 @@
-requests
-pandas
-random_user_agent
-pytz
-nbclient
+requests==1.4.3
+pandas==1.4.3
+random_user_agent==1.0.1
+pytz==2022.1
