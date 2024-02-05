@@ -13,8 +13,6 @@ Welcome to scrape_housing_data's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
-
 Indices and tables
 ==================
 
