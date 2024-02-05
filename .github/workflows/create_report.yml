@@ -35,8 +35,8 @@ jobs:
 
         - name: executing jupyter notebook & export PDF report
           run: |
-            current_date=$(date +'%Y-%m-%d')
-            converted_date=$(TZ=Asia/Kuala_Lumpur date -d "$current_date" +'%y-%m-%dt%H:%M:%S')
+            current_date=$(date +'%Y-%m-%dt%H:%M:%S')
+            converted_date=$(TZ=Asia/Kuala_Lumpur date -d "$current_date" +'%y-%m-%d')
             jupyter execute housing_data.ipynb
             jupyter nbconvert --output-dir='./report' --output report_$converted_date --to webpdf housing_data.ipynb 
 
