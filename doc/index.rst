@@ -6,9 +6,6 @@
 Welcome to scrape_housing_data's documentation!
 =========================================================
 
-.. automodule:: scrape_housing_data.script
-     :members:
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents:

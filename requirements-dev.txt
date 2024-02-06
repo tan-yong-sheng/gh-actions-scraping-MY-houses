@@ -4,3 +4,4 @@ sphinx==7.2.6
 sphinx_rtd_theme==2.0.0
 myst_parser==2.0.0
 nbclient==0.5.13
+sphinx-autoapi==3.0.0

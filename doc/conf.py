@@ -20,8 +20,12 @@ release = '0.1'
 
 extensions = [
     'myst_parser',
-    'sphinx.ext.autodoc',  # Core library for html generation from docstrings
-    ]
+    'sphinx.ext.autodoc',
+    'autoapi.extension',
+]
+autoapi_dirs = ['../scrape_housing_data']
+autoapi_options = [ 'members', 'undoc-members', 'show-inheritance', 
+                   'show-module-summary', 'special-members', 'imported-members']
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']

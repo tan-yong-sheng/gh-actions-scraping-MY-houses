@@ -1,0 +1,104 @@
+:py:mod:`gh-actions-scraping-MY-houses.scrape_housing_data.script`
+==================================================================
+
+.. py:module:: gh-actions-scraping-MY-houses.scrape_housing_data.script
+
+.. autoapi-nested-parse::
+
+   script.py
+   ====================================
+   The core module of my example project
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   gh-actions-scraping-MY-houses.scrape_housing_data.script.get_data_from_mudah
+   gh-actions-scraping-MY-houses.scrape_housing_data.script.scrape_data
+   gh-actions-scraping-MY-houses.scrape_housing_data.script.main
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   gh-actions-scraping-MY-houses.scrape_housing_data.script.data_folder
+   gh-actions-scraping-MY-houses.scrape_housing_data.script.now
+   gh-actions-scraping-MY-houses.scrape_housing_data.script.p
+   gh-actions-scraping-MY-houses.scrape_housing_data.script.path_to_data
+   gh-actions-scraping-MY-houses.scrape_housing_data.script.data
+   gh-actions-scraping-MY-houses.scrape_housing_data.script.data
+   gh-actions-scraping-MY-houses.scrape_housing_data.script.software_names
+   gh-actions-scraping-MY-houses.scrape_housing_data.script.operating_systems
+   gh-actions-scraping-MY-houses.scrape_housing_data.script.user_agent_rotator
+
+
+.. py:data:: data_folder
+   :value: 'data'
+
+   
+
+.. py:data:: now
+
+   
+
+.. py:data:: p
+
+   
+
+.. py:data:: path_to_data
+
+   
+
+.. py:data:: data
+   :value: []
+
+   
+
+.. py:data:: data
+
+   
+
+.. py:data:: software_names
+
+   
+
+.. py:data:: operating_systems
+
+   
+
+.. py:data:: user_agent_rotator
+
+   
+
+.. py:function:: get_data_from_mudah()
+
+   Scrape mudah.my website for property listing, either sell or let
+
+
+.. py:function:: scrape_data(response)
+
+   _summary_
+
+   Parameters
+   ----------
+   response : 
+
+
+.. py:function:: main()
+   :async:
+
+   Asynchronous function to execute the workflows of this project. It executes the following:
+   1. Using `scrape_data` function to scrape data for property listing
+   2. Save the scraped json data into a list
+
+
