@@ -45,6 +45,7 @@ user_agent_rotator = UserAgent(software_names=software_names, operating_systems=
 def get_data_from_mudah():
     """
     Scrape mudah.my website for property listing, either sell or let
+
     """
     response = requests.get("https://search.mudah.my/v1/search",
                        params={"category":2000,

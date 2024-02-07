@@ -32,6 +32,10 @@ Functions
 
    Scrape mudah.my website for property listing, either sell or let
 
+   .. py:: get_data_from_mudah()
+
+   Return the data scraped from mudah.my website for property listing, either sell or let
+
 
 .. py:function:: scrape_data(response)
 
