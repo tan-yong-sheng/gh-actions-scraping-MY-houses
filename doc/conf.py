@@ -20,9 +20,12 @@ release = '0.1'
 
 extensions = [
     'myst_parser',
-    'autoapi.extension',
+    'sphinx.ext.duration',
+    'sphinx.ext.autosectionlabel',
+    'nbsphinx' # myst-nb
 ]
-autoapi_dirs = ['../scrape_housing_data']
+
+# autoapi_dirs = ['../scrape_housing_data']
 #autoapi_options = [ 'members', 'undoc-members', 'show-inheritance', 
 #                   'show-module-summary', 'special-members', 'imported-members']
 
@@ -32,7 +35,7 @@ autoapi_dirs = ['../scrape_housing_data']
 #autoapi_template_dir = '_autoapi_templates'
 #autoapi_add_toctree_entry = False
 
-autodoc_typehints = "description"
+# autodoc_typehints = "description"
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -40,14 +43,5 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'furo'
 html_static_path = ['_static']
-
-
-# to skip document submodule # not appropriate name
-def skip_submodules(app, what, name, obj, skip, options):
-    if what in ("attribute", "data", "method", "module", "package"): 
-        skip = True
-    return skip
-def setup(sphinx):
-    sphinx.connect("autoapi-skip-member", skip_submodules)
