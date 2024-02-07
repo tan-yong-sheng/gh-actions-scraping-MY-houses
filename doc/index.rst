@@ -9,6 +9,7 @@ Welcome to scrape_housing_data's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   :noindex:
 
 Indices and tables
 ==================

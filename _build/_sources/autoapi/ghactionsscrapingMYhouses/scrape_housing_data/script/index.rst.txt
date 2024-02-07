@@ -1,3 +1,5 @@
+:orphan:
+
 :py:mod:`gh-actions-scraping-MY-houses.scrape_housing_data.script`
 ==================================================================
 
