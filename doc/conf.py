@@ -43,7 +43,6 @@ extensions.append('sphinx.ext.napoleon')
 extensions.append('sphinx_autodoc_typehints')
 extensions.append('nbsphinx')
 
-
 autosummary_generate = True
 autoclass_content = 'both'
 html_show_sourcelink = False
