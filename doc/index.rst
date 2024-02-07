@@ -6,9 +6,11 @@
 Welcome to scrape_housing_data's documentation!
 =========================================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+.. autosummary::
+   :toctree: _autosummary
+   :template: custom-module-template.rst
+   :recursive:
+
 
 Indices and tables
 ==================
