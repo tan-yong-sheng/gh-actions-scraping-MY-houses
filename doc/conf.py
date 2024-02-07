@@ -25,10 +25,12 @@ extensions = [
 autoapi_dirs = ['../scrape_housing_data']
 #autoapi_options = [ 'members', 'undoc-members', 'show-inheritance', 
 #                   'show-module-summary', 'special-members', 'imported-members']
-
+suppress_warnings = ["autoapi"] # suppress warning
 
 #autoapi_template_dir = '_autoapi_templates'
 #autoapi_add_toctree_entry = False
+
+autodoc_typehints = "description"
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -40,11 +42,9 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
 
-
-
 # to skip document submodule
 def skip_submodules(app, what, name, obj, skip, options):
-    if what == "module":
+    if what in ("module","data"): 
         skip = True
     return skip
 def setup(sphinx):

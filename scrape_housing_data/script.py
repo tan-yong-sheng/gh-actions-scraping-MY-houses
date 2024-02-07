@@ -55,21 +55,21 @@ def get_data_from_mudah():
     return response
 
 
-def scrape_data(response):
-    """_summary_
+def scrape_data(response: requests.get):
+    """Method to scrape data from housing website and save them to a list of json object
 
-    Parameters
-    ----------
-    response : 
+    :param response: A json response from web requests using requests module
+    :type response: requests.get
     """
     json_output = response.json()["data"]
     data.extend(json_output)
 
 
 # execute and persist data
-async def main():
+def main():
     """
-    Asynchronous function to execute the workflows of this project. It executes the following:
+    Execute the workflows of this project. It executes the following:
+    
     1. Using `scrape_data` function to scrape data for property listing
     2. Save the scraped json data into a list
     """
@@ -83,4 +83,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
