@@ -32,3 +32,21 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
+extensions.append('sphinx.ext.todo')
+extensions.append('sphinx.ext.intersphinx')
+extensions.append('sphinx.ext.mathjax')
+extensions.append('sphinx.ext.viewcode')
+extensions.append('sphinx.ext.graphviz')
+extensions.append('sphinx.ext.coverage')
+extensions.append('sphinx.ext.napoleon')
+extensions.append('sphinx_autodoc_typehints')
+extensions.append('nbsphinx')
+
+
+autosummary_generate = True
+autoclass_content = 'both'
+html_show_sourcelink = False
+autodoc_inherit_docstrings = True
+set_type_checking_flag = True
+autodoc_default_flags = ['members']
