@@ -1,8 +1,0 @@
-:orphan:
-
-:py:mod:`gh-actions-scraping-MY-houses.scrape_housing_data`
-===========================================================
-
-.. py:module:: gh-actions-scraping-MY-houses.scrape_housing_data
-
-
