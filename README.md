@@ -1,5 +1,5 @@
 ---
-title: Malaysia Housing data scraping
+title: Scraping Malaysia Housing data
 emoji: 🏃
 colorFrom: pink
 colorTo: gray
@@ -8,7 +8,7 @@ pinned: false
 license: mit
 ---
 
-# Malaysia Housing data scraping
+# Scraping Malaysia Housing data 
 Created by [Yong Sheng](https://tanyongsheng.net)
 
 ![real estate logo](./logo.jpg)
