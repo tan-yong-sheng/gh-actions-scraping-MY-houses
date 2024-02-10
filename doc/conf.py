@@ -20,9 +20,13 @@ release = '0.1'
 
 extensions = [
     'myst_parser',
-    'autoapi.extension',
+<<<<<<< .merge_file_a27264
+    'sphinx.ext.duration',
+    'sphinx.ext.autosectionlabel',
+    'nbsphinx' # myst-nb
 ]
-autoapi_dirs = ['../scrape_housing_data']
+
+# autoapi_dirs = ['../scrape_housing_data']
 #autoapi_options = [ 'members', 'undoc-members', 'show-inheritance', 
 #                   'show-module-summary', 'special-members', 'imported-members']
 
@@ -32,7 +36,12 @@ autoapi_dirs = ['../scrape_housing_data']
 #autoapi_template_dir = '_autoapi_templates'
 #autoapi_add_toctree_entry = False
 
-autodoc_typehints = "description"
+# autodoc_typehints = "description"
+=======
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary'
+]
+>>>>>>> .merge_file_a17988
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -40,14 +49,25 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'furo'
 html_static_path = ['_static']
+<<<<<<< .merge_file_a27264
+=======
 
+extensions.append('sphinx.ext.todo')
+extensions.append('sphinx.ext.intersphinx')
+extensions.append('sphinx.ext.mathjax')
+extensions.append('sphinx.ext.viewcode')
+extensions.append('sphinx.ext.graphviz')
+extensions.append('sphinx.ext.coverage')
+extensions.append('sphinx.ext.napoleon')
+extensions.append('sphinx_autodoc_typehints')
+extensions.append('nbsphinx')
 
-# to skip document submodule # not appropriate name
-def skip_submodules(app, what, name, obj, skip, options):
-    if what in ("attribute", "data", "method", "module", "package"): 
-        skip = True
-    return skip
-def setup(sphinx):
-    sphinx.connect("autoapi-skip-member", skip_submodules)
+autosummary_generate = True
+autoclass_content = 'both'
+html_show_sourcelink = False
+autodoc_inherit_docstrings = True
+set_type_checking_flag = True
+autodoc_default_flags = ['members']
+>>>>>>> .merge_file_a17988
