@@ -20,6 +20,7 @@ release = '0.1'
 
 extensions = [
     'myst_parser',
+<<<<<<< .merge_file_a27264
     'sphinx.ext.duration',
     'sphinx.ext.autosectionlabel',
     'nbsphinx' # myst-nb
@@ -36,6 +37,11 @@ extensions = [
 #autoapi_add_toctree_entry = False
 
 # autodoc_typehints = "description"
+=======
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary'
+]
+>>>>>>> .merge_file_a17988
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -45,3 +51,23 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'furo'
 html_static_path = ['_static']
+<<<<<<< .merge_file_a27264
+=======
+
+extensions.append('sphinx.ext.todo')
+extensions.append('sphinx.ext.intersphinx')
+extensions.append('sphinx.ext.mathjax')
+extensions.append('sphinx.ext.viewcode')
+extensions.append('sphinx.ext.graphviz')
+extensions.append('sphinx.ext.coverage')
+extensions.append('sphinx.ext.napoleon')
+extensions.append('sphinx_autodoc_typehints')
+extensions.append('nbsphinx')
+
+autosummary_generate = True
+autoclass_content = 'both'
+html_show_sourcelink = False
+autodoc_inherit_docstrings = True
+set_type_checking_flag = True
+autodoc_default_flags = ['members']
+>>>>>>> .merge_file_a17988
