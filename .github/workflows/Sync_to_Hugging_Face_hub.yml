@@ -13,7 +13,21 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          lfs: true      
+          lfs: true
+
+      - name: Add index.md
+        run: |
+         echo
+            """---
+          title: Scraping Malaysia Housing data
+          emoji: 🏃
+          colorFrom: pink
+          colorTo: gray
+          sdk: docker
+          pinned: false
+          license: mit
+          ---
+          """ > index.md      
 
       - name: Push to hub
         env:

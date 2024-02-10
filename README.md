@@ -18,19 +18,3 @@ Scraping housing data from [mudah.my](https://www.mudah.my/) on an hourly basis.
 1. room.ly
 1. roomsos.com
 
-
-# Configuration setup for [Huggingspace](https://huggingface.co/spaces/tan-yong-sheng/gh-actions-scraping-MY-houses)
----
-title: Scraping Malaysia Housing data
-emoji: 🏃
-colorFrom: pink
-colorTo: gray
-sdk: docker
-pinned: false
-license: mit
----
-
-<!--
-used by huggingface only, default readme page is overriden by index.md, set by .gitattributes
---!>
-
