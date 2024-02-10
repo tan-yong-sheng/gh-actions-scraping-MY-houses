@@ -7,5 +7,5 @@ nbclient==0.5.13
 nbsphinx==0.9.3
 rst-to-myst[sphinx]==0.4.0
 sphinx_autobuild==2024.2.4
-furo
-pandocs
+furo==2024.1.29
+pandoc==2.3
