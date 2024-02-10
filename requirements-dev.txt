@@ -8,4 +8,4 @@ nbsphinx==0.9.3
 rst-to-myst[sphinx]==0.4.0
 sphinx_autobuild==2024.2.4
 furo==2024.1.29
-pandoc==2.3
+pandoc==2.3 # usually need to install via conda (or `sudo apt install pandoc` if you're in linux environment)
