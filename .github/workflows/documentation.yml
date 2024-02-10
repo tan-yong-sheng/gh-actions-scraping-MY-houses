@@ -27,11 +27,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-<<<<<<< .merge_file_a20964
           pip install sphinx furo myst_parser sphinx-autoapi nbsphinx
-=======
-          pip install sphinx sphinx_rtd_theme myst_parser sphinx_autodoc_typehints nbsphinx
->>>>>>> .merge_file_a03216
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
@@ -48,13 +44,7 @@ jobs:
 
       - name: Sphinx build
         run: |
-<<<<<<< .merge_file_a20964
           doc/make html
-=======
-          sphinx-apidoc -o doc scrape_housing_data/
-          sphinx-build doc _build
-
->>>>>>> .merge_file_a03216
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
