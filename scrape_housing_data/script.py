@@ -19,7 +19,7 @@ import asyncio
 warnings.filterwarnings("ignore")
 
 # for you to change easily
-data_folder = 'data'
+data_folder = 'output/data'
 now = datetime.datetime.now(tz=pytz.timezone("Asia/Kuala_Lumpur"))
 p = pathlib.Path(os.path.dirname(os.path.dirname(__file__)))
 path_to_data = p.joinpath(data_folder, f"{now:%Y-%m-%d}.json")

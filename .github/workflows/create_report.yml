@@ -38,7 +38,7 @@ jobs:
             current_datetime=$(date +'%Y-%m-%dt%H:%M:%S')
             converted_date=$(TZ=Asia/Kuala_Lumpur date -d "$current_datetime" +'%Y-%m-%d')
             jupyter execute docs/notebook/housing_data.ipynb
-            jupyter nbconvert --output-dir='./report' --output report_$converted_date --to webpdf --allow-chromium-download docs/notebook/housing_data.ipynb 
+            jupyter nbconvert --output-dir='./output/report' --output report_$converted_date --to webpdf --allow-chromium-download docs/notebook/housing_data.ipynb 
 
         - name: Commit the changes to this github repo
           uses: mikeal/publish-to-github-action@master
