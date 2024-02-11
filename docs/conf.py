@@ -34,3 +34,9 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'furo'
 html_static_path = ['_static']
+
+
+# https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-images-html
+myst_enable_extensions = [
+    "attrs_inline", # to adjust image size using markdown syntax
+]

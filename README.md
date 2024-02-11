@@ -11,7 +11,7 @@ license: mit
 # Scraping Malaysia Housing data 
 Created by [Yong Sheng](https://tanyongsheng.net)
 
-![real estate logo](./logo.jpg)
+![real estate logo](docs/images/logo.jpg){.bg-warning w=200px align=center}
 
 Scraping housing data from [mudah.my](https://www.mudah.my/) on an hourly basis. Check [here](https://github.com/tan-yong-sheng/gh-actions-scraping-MY-houses/tree/main/data)!
 
