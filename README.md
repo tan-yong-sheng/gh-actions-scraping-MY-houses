@@ -29,7 +29,7 @@ Scraping housing data from [mudah.my](https://www.mudah.my/) on an hourly basis.
 1. roomsos.com
 
 ## Documentation link: 
-- [https://tan-yong-sheng.github.io/gh-actions-scraping-my-houses/](https://tan-yong-sheng.github.io/gh-actions-scraping-my-houses/)
+- [https://tan-yong-sheng.github.io/gh-actions-scraping-my-houses/](https://tan-yong-sheng.github.io/gh-actions-scraping-MY-houses/)
 
 ## [In heavy development] Where I host the FASTAPI website for this project:
 - [https://huggingface.co/spaces/tan-yong-sheng/gh-actions-scraping-MY-houses](https://huggingface.co/spaces/tan-yong-sheng/gh-actions-scraping-MY-houses)
