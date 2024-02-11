@@ -18,5 +18,5 @@ This library is under heavy development
 
 files/tutorial
 files/01-paper
-files/notebook/housing_data
+notebook/housing_data
 ```

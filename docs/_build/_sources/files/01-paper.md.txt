@@ -3,3 +3,7 @@
 **Authors:** Tan Yong Sheng
 
 **Affiliations:** Executable Bookts, Curve
+
+See [test1](../notebook/housing_data.ipynb)
+
+See {doc}`../files/tutorial.md`
