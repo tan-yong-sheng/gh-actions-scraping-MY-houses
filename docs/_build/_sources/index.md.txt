@@ -16,7 +16,7 @@ This library is under heavy development
 :caption: 'Contents:'
 :maxdepth: 2
 
-01-paper.md
-tutorial
-notebook/housing_data
+files/tutorial
+files/01-paper
+files/notebook/housing_data
 ```
