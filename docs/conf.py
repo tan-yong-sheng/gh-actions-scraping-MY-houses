@@ -22,20 +22,9 @@ extensions = [
     'myst_parser',
     'sphinx.ext.duration',
     'sphinx.ext.autosectionlabel',
-    'nbsphinx' # myst-nb
+    'nbsphinx', # myst-nb
+    'sphinx.ext.autodoc'
 ]
-
-# autoapi_dirs = ['../scrape_housing_data']
-#autoapi_options = [ 'members', 'undoc-members', 'show-inheritance', 
-#                   'show-module-summary', 'special-members', 'imported-members']
-
-# suppress_warnings = ["autoapi"] # suppress 
-# suppress_warnings = ["autoapi.python_import_resolution", "autoapi.not_readable"]
-
-#autoapi_template_dir = '_autoapi_templates'
-#autoapi_add_toctree_entry = False
-
-# autodoc_typehints = "description"
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']

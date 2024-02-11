@@ -41,37 +41,38 @@ operating_systems = [OperatingSystem.WINDOWS.value, OperatingSystem.LINUX.value]
 user_agent_rotator = UserAgent(software_names=software_names, operating_systems=operating_systems, limit=100)
 
 
-# scrape housing data from mudah.my
 def get_data_from_mudah():
     """
-    Scrape mudah.my website for property listing, either sell or let
+    Scrape mudah.my website for property listings, either for sale or rent.
+    
+    :return: Response from the mudah.my API.
+    :rtype: requests.Response
     """
     response = requests.get("https://search.mudah.my/v1/search",
-                       params={"category":2000,
-                               "from":0,
-                               "limit":200},
-                                        # Get Random User Agent String.
-                        headers={"User-Agent": user_agent_rotator.get_random_user_agent()})
+                            params={"category": 2000,
+                                    "from": 0,
+                                    "limit": 200},
+                            headers={"User-Agent": user_agent_rotator.get_random_user_agent()})
     return response
 
 
-def scrape_data(response: requests.get):
-    """Method to scrape data from housing website and save them to a list of json object
+def scrape_data(response: requests.Response):
+    """Scrape data from the housing website and save it to a list of JSON objects.
 
-    :param response: A json response from web requests using requests module
-    :type response: requests.get
+    :param response: A JSON response from web requests using the requests module.
+    :type response: requests.Response
     """
     json_output = response.json()["data"]
     data.extend(json_output)
 
-
 # execute and persist data
 def main():
     """
-    Execute the workflows of this project. It executes the following:
-    
-    1. Using `scrape_data` function to scrape data for property listing
-    2. Save the scraped json data into a list
+    Execute the workflows of this project. It performs the following:
+
+    1. Use `scrape_data` function to scrape data for property listings.
+    2. Save the scraped JSON data into a list.
+    3. Persist the data by writing it to a JSON file.
     """
     mudah_housing_data = get_data_from_mudah()
     
