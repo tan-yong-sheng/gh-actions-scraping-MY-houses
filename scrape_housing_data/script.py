@@ -30,7 +30,7 @@ data = []
     """
 
 
-def scrape_data_from_mudah():
+def scrape_data_from_mudah() -> None:
     """Scrape mudah.my website for property listings, either for sale or rent.
 
     :return: A JSON response received from web requests 
@@ -41,21 +41,13 @@ def scrape_data_from_mudah():
                                     "from": 0,
                                     "limit": 200})
     json_output = response.json()["data"]
-    return json_output
-
-
-def save_data_to_json(json_output):
-    """Save the web requests data in form of 
-
-    :param json_output: _description_
-    :type json_output: _type_
-    """
+    
     if os.path.exists(path_to_data):
         with open(path_to_data, 'r') as file:
             data = json.load(file)   
     data.extend(json_output)
 
-# execute and persist data
+
 def main():
     """
     Execute the workflows of this project. It performs the following:
