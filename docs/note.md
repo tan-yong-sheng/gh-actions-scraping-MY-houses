@@ -1,16 +1,15 @@
-# NOTE
+# Note
 
-- [CONTIBRUTING](#contributing)
 - [Set up conda environment](#set-up-environment)
   - [Manage dependency](#manage-dependency)
-- [Add Python testing with pytest](#
+- [Add Python testing with pytest](#add-python-testing-with-pytest)
   - [Unit testing](#unit-testing)
   - [Integration testing](#integration-testing)
 - [Documentation](#steps-to-create-documentation)
   - [Set up documentation](#set-up-documentation)
   - 
 
-# Set up environment
+## Set up environment
 
 1. Create a Conda Environment
 
@@ -30,7 +29,7 @@ conda activate gh-actions-scraping-MY-houses
 See more here: https://medium.com/@silvinohenriqueteixeiramalta/conda-and-poetry-a-harmonious-fusion-8116895b6380
 
 
-## Manage dependency
+### Manage dependency
 
 `poetry add $(awk -F '==' '{print $1}' requirements.txt)`
 
@@ -45,25 +44,25 @@ To update
 - Activate myst extensions called "attrs_inline": https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-images-html
 - https://myst-parser.readthedocs.io/en/latest/syntax/images_and_figures.html
 
-# Add Python Testing with pytest
+## Add Python Testing with pytest
 
-## Unit testing
+### Unit testing
 - 
 
-## Integration testing
+### Integration testing
 - https://til.simonwillison.net/pytest/pytest-recording-vcr
 
 
-# Steps to create documentation
-## Set up documentation
+## Steps to create documentation
+### Set up documentation
 `sphinx-quickstart docs`
 
-## convert rst file to md
+### convert rst file to md
 - `pip install rst-to-sphinx`
 
 - `rst2myst convert doc/**/*.rst`
 
-## Install myst-parser to sphinx
+### Install myst-parser to sphinx
 - `pip install myst-parser`
 - at doc/config.py, add `extensions=["myst-parser"]`
 
