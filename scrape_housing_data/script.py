@@ -21,15 +21,6 @@ p = pathlib.Path(os.path.dirname(os.path.dirname(__file__)))
 path_to_data = p.joinpath(data_folder, f"{now:%Y-%m-%d}.json")
 data = []
 
-"""
-    
-    The data wil be saved it into a list of JSON objects.
-
-    :param response: 
-    :type response: requests.Response
-    """
-
-
 def scrape_data_from_mudah() -> None:
     """Scrape mudah.my website for property listings, either for sale or rent.
 
@@ -40,6 +31,10 @@ def scrape_data_from_mudah() -> None:
                             params={"category": 2000,
                                     "from": 0,
                                     "limit": 200})
+    return response
+    
+    
+def save_data_to_json(response, data = []):
     json_output = response.json()["data"]
     
     if os.path.exists(path_to_data):

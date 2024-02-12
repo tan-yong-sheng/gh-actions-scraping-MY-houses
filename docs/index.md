@@ -16,9 +16,7 @@ This library is under heavy development
 :caption: 'Contents:'
 :maxdepth: 2
 
-index
 files/tutorial
 files/01-paper
 notebook/housing_data
-{include} ../CONTRIBUTING.md
 ```

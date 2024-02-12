@@ -1,8 +1,14 @@
-# CONTRIBUTING
+# NOTE
 
 - [CONTIBRUTING](#contributing)
-- [Manage dependency](#manage-dependency)
-  
+- [Set up conda environment](#set-up-environment)
+  - [Manage dependency](#manage-dependency)
+- [Add Python testing with pytest](#
+  - [Unit testing](#unit-testing)
+  - [Integration testing](#integration-testing)
+- [Documentation](#steps-to-create-documentation)
+  - [Set up documentation](#set-up-documentation)
+  - 
 
 # Set up environment
 
@@ -24,10 +30,7 @@ conda activate gh-actions-scraping-MY-houses
 See more here: https://medium.com/@silvinohenriqueteixeiramalta/conda-and-poetry-a-harmonious-fusion-8116895b6380
 
 
-# Manage dependency
-
-## 
-
+## Manage dependency
 
 `poetry add $(awk -F '==' '{print $1}' requirements.txt)`
 
@@ -42,10 +45,18 @@ To update
 - Activate myst extensions called "attrs_inline": https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-images-html
 - https://myst-parser.readthedocs.io/en/latest/syntax/images_and_figures.html
 
+# Add Python Testing with pytest
+
+## Unit testing
+- 
+
+## Integration testing
+- https://til.simonwillison.net/pytest/pytest-recording-vcr
+
 
 # Steps to create documentation
 ## Set up documentation
-sphinx-quickstart doc
+`sphinx-quickstart docs`
 
 ## convert rst file to md
 - `pip install rst-to-sphinx`

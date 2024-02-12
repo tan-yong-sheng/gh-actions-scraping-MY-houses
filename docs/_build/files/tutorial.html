@@ -1,15 +1,15 @@
 <!doctype html>
-<html class="no-js" lang="en" data-content_root="">
+<html class="no-js" lang="en" data-content_root="../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Paper" href="01-paper.html" /><link rel="prev" title="Scraping Malaysia Housing data" href="../index.html" />
 
-    <!-- Generated with Sphinx 6.2.1 and Furo 2024.01.29 -->
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>Tutorial - gh-actions-scraping-MY-houses 0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=369552022d0b975c8e74270ce6eabe0fb7978f24" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
 
@@ -194,37 +194,26 @@
         </div>
         <article role="main">
           <section id="tutorial">
-<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading">#</a></h1>
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Link to this heading">#</a></h1>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(.venv)</span> <span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>&lt;library&gt;
 </pre></div>
 </div>
 </section>
 <section id="creating-recipes">
-<h2>Creating recipes<a class="headerlink" href="#creating-recipes" title="Permalink to this heading">#</a></h2>
-<p>To create a recipe, you can use the <a class="reference internal" href="#scrape_housing_data.script.get_data_from_mudah" title="scrape_housing_data.script.get_data_from_mudah"><code class="xref py py-func docutils literal notranslate"><span class="pre">scrape_housing_data.script.get_data_from_mudah()</span></code></a> function:</p>
+<h2>Creating recipes<a class="headerlink" href="#creating-recipes" title="Link to this heading">#</a></h2>
+<p>To create a recipe, you can use the <code class="xref py py-func docutils literal notranslate"><span class="pre">scrape_housing_data.script.get_data_from_mudah()</span></code> function:</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="scrape_housing_data.script.get_data_from_mudah">
-<span class="sig-prename descclassname"><span class="pre">scrape_housing_data.script.</span></span><span class="sig-name descname"><span class="pre">get_data_from_mudah</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scrape_housing_data.script.get_data_from_mudah" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="scrape_housing_data.script.scrape_data_from_mudah">
+<span class="sig-prename descclassname"><span class="pre">scrape_housing_data.script.</span></span><span class="sig-name descname"><span class="pre">scrape_data_from_mudah</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#scrape_housing_data.script.scrape_data_from_mudah" title="Link to this definition">#</a></dt>
 <dd><p>Scrape mudah.my website for property listings, either for sale or rent.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Response from the mudah.my API.</p>
+<dd class="field-odd"><p>A JSON response received from web requests</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>requests.Response</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="scrape_housing_data.script.scrape_data">
-<span class="sig-prename descclassname"><span class="pre">scrape_housing_data.script.</span></span><span class="sig-name descname"><span class="pre">scrape_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Response</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scrape_housing_data.script.scrape_data" title="Permalink to this definition">#</a></dt>
-<dd><p>Scrape data from the housing website and save it to a list of JSON objects.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>response</strong> (<em>requests.Response</em>) – A JSON response from web requests using the requests module.</p>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -290,8 +279,7 @@
 <li><a class="reference internal" href="#">Tutorial</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#creating-recipes">Creating recipes</a><ul>
-<li><a class="reference internal" href="#scrape_housing_data.script.get_data_from_mudah"><code class="docutils literal notranslate"><span class="pre">get_data_from_mudah()</span></code></a></li>
-<li><a class="reference internal" href="#scrape_housing_data.script.scrape_data"><code class="docutils literal notranslate"><span class="pre">scrape_data()</span></code></a></li>
+<li><a class="reference internal" href="#scrape_housing_data.script.scrape_data_from_mudah"><code class="docutils literal notranslate"><span class="pre">scrape_data_from_mudah()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -305,10 +293,10 @@
       
     </aside>
   </div>
-</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/scripts/furo.js"></script>
+</div><script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     </body>
 </html>
