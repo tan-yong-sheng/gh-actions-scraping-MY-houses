@@ -62,7 +62,7 @@ def main():
 
     1. Use `scrape_data` function to scrape data for property listings.
     2. Save the scraped JSON data into a list.
-    3. Persist the data by writing it to a JSON file.
+    3. Persist the data by writing it to a JSON file.putty
     """
     mudah_housing_data = scrape_data_from_mudah()
     save_data_to_json(mudah_housing_data)
