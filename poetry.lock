@@ -1373,6 +1373,20 @@ files = [
 ]
 
 [[package]]
+name = "pypandoc-binary"
+version = "1.12"
+description = "Thin wrapper for pandoc."
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "pypandoc_binary-1.12-py3-none-macosx_10_9_x86_64.whl", hash = "sha256:3c6e4cccc87c13f2649dafcf5670a4e26774e5a3e39ab14ae43c6f3055a5f9b6"},
+    {file = "pypandoc_binary-1.12-py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7eb1ac487453a1463355662860106640ac0204dedb40f586f66cff4c7a73e001"},
+    {file = "pypandoc_binary-1.12-py3-none-musllinux_1_1_x86_64.whl", hash = "sha256:dc0dd09289ff68c5b036f334921521c2622018d9c566ec3688f0eb635cb613c7"},
+    {file = "pypandoc_binary-1.12-py3-none-win32.whl", hash = "sha256:93c228e05852844a784d6a3f429a8ef28f30c5b77cca49d12493e6bdc8426925"},
+    {file = "pypandoc_binary-1.12-py3-none-win_amd64.whl", hash = "sha256:600006a15ff1729160c203768be0aa95fd43d50ec88f8b23ece0d1423b6f633c"},
+]
+
+[[package]]
 name = "pytest"
 version = "8.0.0"
 description = "pytest: simple powerful testing with Python"
@@ -2094,20 +2108,22 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 
 [[package]]
 name = "vcrpy"
-version = "4.3.0"
+version = "6.0.1"
 description = "Automatically mock your HTTP interactions to simplify and speed up testing"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "vcrpy-4.3.0-py2.py3-none-any.whl", hash = "sha256:8fbd4be412e8a7f35f623dd61034e6380a1c8dbd0edf6e87277a3289f6e98093"},
-    {file = "vcrpy-4.3.0.tar.gz", hash = "sha256:49c270ce67e826dba027d83e20d25b67a5885487697e97bca6dbdf53d750a0ac"},
+    {file = "vcrpy-6.0.1.tar.gz", hash = "sha256:9e023fee7f892baa0bbda2f7da7c8ac51165c1c6e38ff8688683a12a4bde9278"},
 ]
 
 [package.dependencies]
 PyYAML = "*"
-six = ">=1.5"
+urllib3 = {version = "<2", markers = "platform_python_implementation == \"PyPy\" or python_version < \"3.10\""}
 wrapt = "*"
 yarl = "*"
+
+[package.extras]
+tests = ["Werkzeug (==2.0.3)", "aiohttp", "boto3", "httplib2", "httpx", "pytest", "pytest-aiohttp", "pytest-asyncio", "pytest-cov", "pytest-httpbin", "requests (>=2.22.0)", "tornado", "urllib3"]
 
 [[package]]
 name = "webencodings"
@@ -2320,4 +2336,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "ef24f268045d426206527c34401032cd63ecc42ba7ca7ba7c3c6c4fb992bb0ce"
+content-hash = "4d09b902107d9f69b0f9814c6f337b9352dc4a40394d46778ca2f2cf97b8decc"

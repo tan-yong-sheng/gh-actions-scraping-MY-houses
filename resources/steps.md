@@ -4,6 +4,25 @@
 - [Manage dependency](#manage-dependency)
   
 
+# Set up environment
+
+1. Create a Conda Environment
+
+```
+conda create -n gh-actions-scraping-MY-houses python=3.9
+conda activate gh-actions-scraping-MY-houses
+```
+
+`conda install poetry`
+
+`poetry init`
+
+`poetry lock`
+
+`conda env export | grep -v "^prefix: " > environment.yml`
+
+See more here: https://medium.com/@silvinohenriqueteixeiramalta/conda-and-poetry-a-harmonious-fusion-8116895b6380
+
 
 # Manage dependency
 
