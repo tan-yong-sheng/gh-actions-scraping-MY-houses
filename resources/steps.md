@@ -1,9 +1,19 @@
+# CONTRIBUTING
+
+- [CONTIBRUTING](#contributing)
+- [Manage dependency](#manage-dependency)
+  
+
+
+# Manage dependency
+
+## 
 
 
 `poetry add $(awk -F '==' '{print $1}' requirements.txt)`
 
 To update 
-`poetry add --group dev $(awk -F '==' '{print $1}' requirements.txt)`
+`poetry add --group dev $(awk -F '==' '{print $1}' requirements-dev.txt)`
 
 1. Deploy FastAPI to HuggingFace
 - credentials - git login to Huggingface: https://huggingface.co/docs/huggingface_hub/en/quick-start
