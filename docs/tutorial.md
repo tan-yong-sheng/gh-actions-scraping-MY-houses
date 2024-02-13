@@ -16,5 +16,5 @@ To create a recipe, you can use the {py:func}`scrape_housing_data.script.get_dat
 ```
 
 ```{eval-rst}
-.. autofunction:: scrape_housing_data.script.save_data_to_json
+.. autofunction:: scrape_housing_data.script.append_data_to_json_file
 ```

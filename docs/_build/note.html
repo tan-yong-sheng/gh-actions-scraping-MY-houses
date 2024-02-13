@@ -199,7 +199,7 @@
 <ul class="simple">
 <li><p><a class="reference internal" href="#set-up-environment"><span class="std std-ref">Set up conda environment</span></a></p>
 <ul>
-<li><p><a class="reference internal" href="#manage-dependency"><span class="std std-ref">Manage dependency</span></a></p></li>
+<li><p>Manage dependency</p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#add-python-testing-with-pytest"><span class="std std-ref">Add Python testing with pytest</span></a></p>
@@ -218,52 +218,62 @@
 <section id="set-up-environment">
 <h2>Set up environment<a class="headerlink" href="#set-up-environment" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Create a Conda Environment</p></li>
+<li><p>Create a Conda Environment &amp; Manage dependency</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">gh</span><span class="o">-</span><span class="n">actions</span><span class="o">-</span><span class="n">scraping</span><span class="o">-</span><span class="n">MY</span><span class="o">-</span><span class="n">houses</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.9</span>
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">gh</span><span class="o">-</span><span class="n">actions</span><span class="o">-</span><span class="n">scraping</span><span class="o">-</span><span class="n">MY</span><span class="o">-</span><span class="n">houses</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">poetry</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">init</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">lock</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">&quot;^prefix:</span> <span class="pre">&quot;</span> <span class="pre">&gt;</span> <span class="pre">environment.yml</span></code></p>
-<p>See more here: https://medium.com/&#64;silvinohenriqueteixeiramalta/conda-and-poetry-a-harmonious-fusion-8116895b6380</p>
-<section id="manage-dependency">
-<h3>Manage dependency<a class="headerlink" href="#manage-dependency" title="Link to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">$(awk</span> <span class="pre">-F</span> <span class="pre">'=='</span> <span class="pre">'{print</span> <span class="pre">$1}'</span> <span class="pre">requirements.txt)</span></code></p>
-<p>To update
+<p>To install poetry in my conda environment
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">poetry</span></code></p>
+<p>To create a new poetry environment
+<code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">init</span></code></p>
+<p>To activate poetry environment:
+<code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">shell</span></code></p>
+<p>To add python packages recorded in requirements.txt into poetry environment
+<code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">$(awk</span> <span class="pre">-F</span> <span class="pre">'=='</span> <span class="pre">'{print</span> <span class="pre">$1}'</span> <span class="pre">requirements.txt)</span></code></p>
+<p>To add python packages recorded in requirements-dev.txt into poetry environment for development purpose:
 <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">add</span> <span class="pre">--group</span> <span class="pre">dev</span> <span class="pre">$(awk</span> <span class="pre">-F</span> <span class="pre">'=='</span> <span class="pre">'{print</span> <span class="pre">$1}'</span> <span class="pre">requirements-dev.txt)</span></code></p>
-<ol class="arabic simple">
-<li><p>Deploy FastAPI to HuggingFace</p></li>
-</ol>
-<ul class="simple">
-<li><p>credentials - git login to Huggingface: https://huggingface.co/docs/huggingface_hub/en/quick-start</p></li>
-<li><p>Github actions to HuggingFace: https://huggingface.co/docs/hub/spaces-github-actions</p></li>
-</ul>
-<ol class="arabic simple" start="2">
-<li><p>To adjust image size with myst-parser in sphinx documentation</p></li>
-</ol>
-<ul class="simple">
-<li><p>Activate myst extensions called “attrs_inline”: https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-images-html</p></li>
-<li><p>https://myst-parser.readthedocs.io/en/latest/syntax/images_and_figures.html</p></li>
-</ul>
-</section>
+<p>To make sure all the python packages installed in the poetry environment:
+<code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code></p>
+<p>To ensure reproducibility
+<code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">lock</span></code></p>
+<p>To export the
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">&quot;^prefix:</span> <span class="pre">&quot;</span> <span class="pre">&gt;</span> <span class="pre">environment.yml</span></code></p>
+<p>See more here: https://medium.com/&#64;silvinohenriqueteixeiramalta/conda-and-poetry-a-harmonious-fusion-8116895b6380</p>
 </section>
 <section id="add-python-testing-with-pytest">
 <h2>Add Python Testing with pytest<a class="headerlink" href="#add-python-testing-with-pytest" title="Link to this heading">#</a></h2>
 <section id="unit-testing">
 <h3>Unit testing<a class="headerlink" href="#unit-testing" title="Link to this heading">#</a></h3>
+<section id="initial-configuration">
+<h4>Initial configuration<a class="headerlink" href="#initial-configuration" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li></li>
+<li><p>conftest.py</p></li>
+<li><p>pytest.ini</p></li>
+</ul>
+</section>
+</section>
+<section id="fixture">
+<h3>fixture<a class="headerlink" href="#fixture" title="Link to this heading">#</a></h3>
+</section>
+<section id="when-to-use-mocking">
+<h3>When to use mocking<a class="headerlink" href="#when-to-use-mocking" title="Link to this heading">#</a></h3>
+<p><img alt="When to mock" src="https://enterprisecraftsmanship.com/images/2016/2016-11-15-2-1.png" /></p>
+<ul class="simple">
+<li><p>https://enterprisecraftsmanship.com/posts/when-to-include-external-systems-into-testing-scope/</p></li>
+<li><p>https://chemaclass.medium.com/to-mock-or-not-to-mock-af995072b22e</p></li>
 </ul>
 </section>
 <section id="integration-testing">
 <h3>Integration testing<a class="headerlink" href="#integration-testing" title="Link to this heading">#</a></h3>
+<section id="pytest-recording">
+<h4>pytest-recording<a class="headerlink" href="#pytest-recording" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>https://code.kiwi.com/articles/pytest-cassettes-forget-about-mocks-or-live-requests/</p></li>
 <li><p>https://til.simonwillison.net/pytest/pytest-recording-vcr</p></li>
 </ul>
+</section>
 </section>
 </section>
 <section id="steps-to-create-documentation">
@@ -287,10 +297,31 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">sphinx-build</span> <span class="pre">docs</span> <span class="pre">docs/_build</span></code></p></li>
 </ul>
 </section>
+<section id="add-on">
+<h3>Add-on<a class="headerlink" href="#add-on" title="Link to this heading">#</a></h3>
+<section id="adjust-image-size">
+<h4>Adjust image size<a class="headerlink" href="#adjust-image-size" title="Link to this heading">#</a></h4>
+<p>To adjust image size with myst-parser in sphinx documentation</p>
+<ul class="simple">
+<li><p>Activate myst extensions called “attrs_inline”: https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-images-html</p></li>
+<li><p>https://myst-parser.readthedocs.io/en/latest/syntax/images_and_figures.html</p></li>
+</ul>
+</section>
+</section>
 </section>
 <section id="documentation-testing-with-doctest">
 <h2>Documentation Testing with doctest<a class="headerlink" href="#documentation-testing-with-doctest" title="Link to this heading">#</a></h2>
 <p>Documentation testing is useful in testing whether your code documentation is up-to-date. That’s quite some functionality, particularly in big projects: with just one command, you can check whether all examples are correct. See more <a class="reference external" href="https://towardsdatascience.com/python-documentation-testing-with-doctest-the-easy-way-c024556313ca">here</a></p>
+</section>
+<section id="ci-cd-with-github-actions">
+<h2>CI/ CD with Github Actions<a class="headerlink" href="#ci-cd-with-github-actions" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Deploy FastAPI to HuggingFace</p></li>
+</ol>
+<ul class="simple">
+<li><p>credentials - git login to Huggingface: https://huggingface.co/docs/huggingface_hub/en/quick-start</p></li>
+<li><p>Github actions to HuggingFace: https://huggingface.co/docs/hub/spaces-github-actions</p></li>
+</ul>
 </section>
 </section>
 
@@ -342,22 +373,32 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Note</a><ul>
-<li><a class="reference internal" href="#set-up-environment">Set up environment</a><ul>
-<li><a class="reference internal" href="#manage-dependency">Manage dependency</a></li>
+<li><a class="reference internal" href="#set-up-environment">Set up environment</a></li>
+<li><a class="reference internal" href="#add-python-testing-with-pytest">Add Python Testing with pytest</a><ul>
+<li><a class="reference internal" href="#unit-testing">Unit testing</a><ul>
+<li><a class="reference internal" href="#initial-configuration">Initial configuration</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#add-python-testing-with-pytest">Add Python Testing with pytest</a><ul>
-<li><a class="reference internal" href="#unit-testing">Unit testing</a></li>
-<li><a class="reference internal" href="#integration-testing">Integration testing</a></li>
+<li><a class="reference internal" href="#fixture">fixture</a></li>
+<li><a class="reference internal" href="#when-to-use-mocking">When to use mocking</a></li>
+<li><a class="reference internal" href="#integration-testing">Integration testing</a><ul>
+<li><a class="reference internal" href="#pytest-recording">pytest-recording</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#steps-to-create-documentation">Steps to create documentation</a><ul>
 <li><a class="reference internal" href="#set-up-documentation">Set up documentation</a></li>
 <li><a class="reference internal" href="#convert-rst-file-to-md">convert rst file to md</a></li>
 <li><a class="reference internal" href="#install-myst-parser-to-sphinx">Install myst-parser to sphinx</a></li>
+<li><a class="reference internal" href="#add-on">Add-on</a><ul>
+<li><a class="reference internal" href="#adjust-image-size">Adjust image size</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#documentation-testing-with-doctest">Documentation Testing with doctest</a></li>
+<li><a class="reference internal" href="#ci-cd-with-github-actions">CI/ CD with Github Actions</a></li>
 </ul>
 </li>
 </ul>

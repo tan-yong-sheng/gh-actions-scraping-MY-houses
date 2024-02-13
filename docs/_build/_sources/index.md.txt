@@ -20,4 +20,5 @@ tutorial
 01-paper
 notebook/housing_data
 note
+files/report.html
 ```

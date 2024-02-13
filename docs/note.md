@@ -47,9 +47,24 @@ See more here: https://medium.com/@silvinohenriqueteixeiramalta/conda-and-poetry
 ## Add Python Testing with pytest
 
 ### Unit testing
-- 
+
+#### Initial configuration
+- conftest.py
+- pytest.ini
+
+### fixture
+
+
+### When to use mocking
+![When to mock](https://enterprisecraftsmanship.com/images/2016/2016-11-15-2-1.png)
+- https://enterprisecraftsmanship.com/posts/when-to-include-external-systems-into-testing-scope/
+
+- https://chemaclass.medium.com/to-mock-or-not-to-mock-af995072b22e
+
 
 ### Integration testing
+
+#### pytest-recording
 - https://code.kiwi.com/articles/pytest-cassettes-forget-about-mocks-or-live-requests/
 
 - https://til.simonwillison.net/pytest/pytest-recording-vcr
