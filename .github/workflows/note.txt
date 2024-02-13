@@ -3,7 +3,7 @@ add one more github action to solve problem as follows:
 
 - lint
 - black & ruff (for code formatting)
-- pytest
+- pytest - (pytest --html=docs/files/report.html )
 - mypy - for type hint check
 (Note: please refer to openbb)
 
