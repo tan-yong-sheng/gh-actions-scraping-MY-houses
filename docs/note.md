@@ -50,6 +50,8 @@ To update
 - 
 
 ### Integration testing
+- https://code.kiwi.com/articles/pytest-cassettes-forget-about-mocks-or-live-requests/
+
 - https://til.simonwillison.net/pytest/pytest-recording-vcr
 
 
