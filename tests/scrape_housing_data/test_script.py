@@ -27,9 +27,8 @@ def test_open_json_file():
   with patch("scrape_housing_data.open_json_file") as mocked_function:
     mock_file_opener.return_value = {}
     result = scrape_housing_data.script.open_json_file(filename="2024-02-06.json")
-    mocked_function.assert_called_once_with(filename="")
+    mocked_function.assert_called_once_with(filename="2024-02-06.json")
   assert  result == {}
-
 
 
 """
