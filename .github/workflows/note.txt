@@ -1,0 +1,15 @@
+add one more github action to solve problem as follows:
+(then reject the commit from push & pull requests, if this test fails)
+
+- lint
+- black & ruff (for code formatting)
+- pytest
+- mypy - for type hint check
+(Note: please refer to openbb)
+
+trigger:
+  - push 
+  - pull requests
+
+branch:
+  - main
