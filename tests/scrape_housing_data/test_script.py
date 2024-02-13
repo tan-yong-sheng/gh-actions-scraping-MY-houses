@@ -5,10 +5,11 @@ To test scrape_housing_data/script.py file
 """
 import requests
 import pytest
-import json
+from unittest.mock import Mock, patch
+import scrape_housing_data
 
 @pytest.mark.vcr(allow_playback_repeats=True)
-def test_scrape_data_from_mudah() -> None:
+def test_scrape_data_from_mudah():
   
   # integration testing with pytest-recording: https://til.simonwillison.net/pytest/pytest-recording-vcr
   response = requests.get("https://search.mudah.my/v1/search",
@@ -20,12 +21,20 @@ def test_scrape_data_from_mudah() -> None:
   assert "data" in json_output
 
 
-@pytest.fixture(scope="session")
-def json_dict(tmp_path_factory, mocker):
-  path_to_data = tmp_path_factory.mktemp("output") / "data" / "2024-03-14.json"
+def test_open_json_file():
+  mock_file_opener = Mock()
   
+  with patch("scrape_housing_data.open_json_file") as mocked_function:
+    mock_file_opener.return_value = {}
+    result = scrape_housing_data.script.open_json_file(filename="2024-02-06.json")
+    mocked_function.assert_called_once_with(filename="")
+  assert  result == {}
+
+
+
+"""
+save_data_to_json_file()
   
-  open(path_to_data, 'r') as file:
   data = json.load(file)
   print("File path exists")
 
@@ -34,7 +43,6 @@ def json_dict(tmp_path_factory, mocker):
 def test_save_data_to_json(json_dict):
   assert json_dict == []
 
-"""
 def test_save_data_to_json_no_existing_file(mocker):
   # Use valid JSON for the initial file contents.
   mock_file_read_data = '[]'  # Represents an empty list in JSON.
