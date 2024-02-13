@@ -5,7 +5,6 @@ To test scrape_housing_data/script.py file
 """
 import requests
 import pytest
-from unittest.mock import Mock, patch
 import scrape_housing_data
 
 @pytest.mark.vcr(allow_playback_repeats=True)
@@ -21,13 +20,13 @@ def test_scrape_data_from_mudah():
   assert "data" in json_output
 
 
-def test_open_json_file():
-  mock_file_opener = Mock()
+def test_open_json_file(mocker):
+  mocked_function = mocker.patch("scrape_housing_data.open_json_file")
+  mocked_function.return_value = {}
   
-  with patch("scrape_housing_data.open_json_file") as mocked_function:
-    mock_file_opener.return_value = {}
-    result = scrape_housing_data.script.open_json_file(filename="2024-02-06.json")
-    mocked_function.assert_called_once_with(filename="2024-02-06.json")
+  result = scrape_housing_data.script.open_json_file(filename="2024-02-06.json")
+  
+  mocked_function.assert_called_once_with(filename="2024-02-06.json")
   assert  result == {}
 
 
