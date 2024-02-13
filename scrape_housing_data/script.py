@@ -31,17 +31,25 @@ def scrape_data_from_mudah() -> None:
                                     "from": 0,
                                     "limit": 200})
     return response["data"]
- 
 
-def save_data_to_json(json_dict):
-    # Initialize an empty list or load existing data from the file
+
+def save_data_to_json(json_output):
+    """Initialize an empty list or load existing data from the file
+
+    :param json_dict: a JSON dictionary fetch from web requests
+    :type json_dict: dict  
+    
+    **Usage example:**
+    
+    >>> save_data_to_json(scrape_data_from_mudah())
+    """
     data = []
     if os.path.exists(path_to_data):
         with open(path_to_data, 'r') as file:
             data = json.load(file)
     
     # Extend the existing data with the new JSON output
-    data.extend(json_dict)
+    data.extend(json_output)
 
     # Save the updated data back to the file
     with open(path_to_data, 'w') as file:

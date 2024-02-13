@@ -50,6 +50,8 @@ To update
 - 
 
 ### Integration testing
+- https://code.kiwi.com/articles/pytest-cassettes-forget-about-mocks-or-live-requests/
+
 - https://til.simonwillison.net/pytest/pytest-recording-vcr
 
 
@@ -68,3 +70,7 @@ To update
 
 - `sphinx-build docs docs/_build`
 
+
+## Documentation Testing with doctest
+
+Documentation testing is useful in testing whether your code documentation is up-to-date. That’s quite some functionality, particularly in big projects: with just one command, you can check whether all examples are correct. See more [here](https://towardsdatascience.com/python-documentation-testing-with-doctest-the-easy-way-c024556313ca)
