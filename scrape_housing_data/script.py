@@ -30,12 +30,10 @@ def scrape_data_from_mudah() -> None:
                             params={"category": 2000,
                                     "from": 0,
                                     "limit": 200})
-    return response
+    return response["data"]
  
 
-def save_data_to_json(response):
-    json_output = response.json()["data"]
-    
+def save_data_to_json(json_dict):
     # Initialize an empty list or load existing data from the file
     data = []
     if os.path.exists(path_to_data):
@@ -43,8 +41,8 @@ def save_data_to_json(response):
             data = json.load(file)
     
     # Extend the existing data with the new JSON output
-    data.extend(json_output)
-    
+    data.extend(json_dict)
+
     # Save the updated data back to the file
     with open(path_to_data, 'w') as file:
         json.dump(data, file, indent=2)
