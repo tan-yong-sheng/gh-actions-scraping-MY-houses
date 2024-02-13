@@ -11,3 +11,9 @@ def vcr_config():
         "ignore_localhost": True, # only want to record third-party APIs
         "record_mode": "once",
     }
+    
+@pytest.fixture(scope="function")
+def json_data():
+  return {'key':'value'}
+
+

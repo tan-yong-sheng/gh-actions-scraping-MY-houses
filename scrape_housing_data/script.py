@@ -28,28 +28,8 @@ def scrape_data_from_mudah(url: str ="https://search.mudah.my/v1/search",
                             headers=headers,
                             params=params
                             )
-    
     return response.json()["data"]
 
-
-def open_json_file(filename: str) -> dict:
-    """_summary_
-
-    :param filename: _description_
-    :type filename: str
-    :raises ValueError: _description_
-    :return: _description_
-    :rtype: json
-    """
-    try:
-        with open(filename, 'r') as file:
-            try:
-                return json.load(file)
-            except ValueError:
-                raise ValueError('{} is not valid JSON.'.format(filename))
-    except FileNotFoundError:
-        # if the file doesn't exists
-        return {}
 
 def append_data_to_json_file(data:list =[], filename: typing.Optional[str]=None) -> None:
     """Initialize an empty list or load existing data from the file
@@ -65,8 +45,13 @@ def append_data_to_json_file(data:list =[], filename: typing.Optional[str]=None)
         p = pathlib.Path(__file__).parent.parent
         filename = p.joinpath(data_folder, f"{now:%Y-%m-%d}.json")
 
+    with open(filename, 'r') as file:
+        try:
+            json_data = json.load(file)
+        except ValueError:
+            raise ValueError('{} is not valid JSON.'.format(filename))
+
     # Extend the existing data with the new JSON output
-    json_data = open_json_file(filename)
     data.extend(json_data)
 
     # Save the updated data back to the file

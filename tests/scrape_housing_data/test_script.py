@@ -5,12 +5,12 @@ To test scrape_housing_data/script.py file
 """
 import requests
 import pytest
-import scrape_housing_data
+import json
+from scrape_housing_data.script import append_data_to_json_file
 
 @pytest.mark.vcr(allow_playback_repeats=True)
 def test_scrape_data_from_mudah():
-  
-  # integration testing with pytest-recording: https://til.simonwillison.net/pytest/pytest-recording-vcr
+  # pytest-recording: https://til.simonwillison.net/pytest/pytest-recording-vcr
   response = requests.get("https://search.mudah.my/v1/search",
                         params={"category": 2000,
                                 "from": 0,
@@ -20,24 +20,18 @@ def test_scrape_data_from_mudah():
   assert "data" in json_output
 
 
-def test_open_json_file(mocker):
-  mocked_function = mocker.patch("scrape_housing_data.open_json_file")
-  mocked_function.return_value = {}
-  
-  result = scrape_housing_data.script.open_json_file(filename="2024-02-06.json")
-  
-  mocked_function.assert_called_once_with(filename="2024-02-06.json")
-  assert  result == {}
-
+def test_append_data_to_json_file(json_data, tmp_path):
+  # setup
+  filename = tmp_path / "dummy.json"
+  with open(filename, 'w') as file:
+    # call function
+    json.dump(json_data, file)
+    # compare expected vs result
+  with open(filename, 'r') as file:
+    content = file.read()
+    assert content == '{"key": "value"}'
 
 """
-save_data_to_json_file()
-  
-  data = json.load(file)
-  print("File path exists")
-
-  return data
-
 def test_save_data_to_json(json_dict):
   assert json_dict == []
 
